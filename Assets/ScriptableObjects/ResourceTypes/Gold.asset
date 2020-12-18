@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30eb297cd46651d4a85de0ca355107e5, type: 3}
-  m_Name: BuildingTypeListSO
+  m_Script: {fileID: 11500000, guid: de35c31c813e91a4c92db1c997260840, type: 3}
+  m_Name: Gold
   m_EditorClassIdentifier: 
-  buildingTypeList:
-  - {fileID: 11400000, guid: 7e39749ee204d2b45898fdb25948ebe4, type: 2}
-  - {fileID: 11400000, guid: d3aefd60dee351e409539509a25193a8, type: 2}
+  nameString: Gold

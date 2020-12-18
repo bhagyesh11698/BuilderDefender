@@ -10,10 +10,8 @@ public class BuildingManager : MonoBehaviour
 
     Camera mainCamera;
 
-    private void Start()
+    private void Awake()
     {
-        mainCamera = Camera.main; // cached camera
-
         // Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList")); //string can cause errors
 
         //Another way
@@ -21,17 +19,23 @@ public class BuildingManager : MonoBehaviour
         buildingType = buildingTypeList.list[0];
     }
 
+    private void Start()
+    {
+        mainCamera = Camera.main; // cached camera
+
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0)) // 0 for left mouse button
         {
-            Instantiate(buildingType.prefab,GetMouseWorldPosition(),Quaternion.identity);
+            Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
         {
             buildingType = buildingTypeList.list[0];
-        }       
+        }
         if (Input.GetKeyDown(KeyCode.Y))
         {
             buildingType = buildingTypeList.list[1];
