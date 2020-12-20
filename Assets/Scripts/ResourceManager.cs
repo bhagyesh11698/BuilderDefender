@@ -1,13 +1,21 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
+using System;
 
 public class ResourceManager : MonoBehaviour
 {
+    // allow others to read from anywhere but only instance can set this class 
+    public static ResourceManager Instance { get; private set; }
+
+    public event EventHandler OnResourceAmountChanged;
+
     Dictionary<ResourceTypeSO, int> resourceAmountDictionary;
+
     private void Awake()
     {
+        Instance = this;
+
         resourceAmountDictionary = new Dictionary<ResourceTypeSO, int>();
 
         ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
@@ -41,5 +49,14 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(ResourceTypeSO resourceType, int amount)
     {
         resourceAmountDictionary[resourceType] += amount;
+
+        OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
+
+        TestLogresourceAmountDictionary();
+    }
+
+    public int GetResourceAmount(ResourceTypeSO resourceType)
+    {
+        return resourceAmountDictionary[resourceType];
     }
 }
