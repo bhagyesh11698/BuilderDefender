@@ -1,22 +1,25 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Collections;
 using System.Collections.Generic;
 
 
 public class BuildingManager : MonoBehaviour
 {
-    BuildingTypeSO buildingType;
-    BuildingTypeListSO buildingTypeList;
+    public static BuildingManager Instance { get; private set; }
 
     Camera mainCamera;
+    BuildingTypeListSO buildingTypeList;
+    BuildingTypeSO activebuildingType;
+
 
     private void Awake()
     {
+        Instance = this;
         // Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList")); //string can cause errors
 
         //Another way
         buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name); // keep name same as script
-        buildingType = buildingTypeList.list[0];
     }
 
     private void Start()
@@ -27,21 +30,13 @@ public class BuildingManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // 0 for left mouse button
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject()) // 0 for left mouse button
         {
-            Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            if (activebuildingType != null)
+            {
+                Instantiate(activebuildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            buildingType = buildingTypeList.list[0];
-        }
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            buildingType = buildingTypeList.list[1];
-        }
-
-
     }
 
     Vector3 GetMouseWorldPosition()
@@ -59,4 +54,13 @@ public class BuildingManager : MonoBehaviour
         return mouseWorldPosition;
     }
 
+    public void SetActiveBuildingType(BuildingTypeSO buildingType)
+    {
+        activebuildingType = buildingType;
+    }
+
+    public BuildingTypeSO GetActiveBuildingType()
+    {
+        return activebuildingType;
+    }
 }

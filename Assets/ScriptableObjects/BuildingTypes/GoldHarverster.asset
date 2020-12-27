@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5a66a747f3f4a847b16909e6448ccee, type: 3}
-  m_Name: WoodHarverster
+  m_Name: GoldHarverster
   m_EditorClassIdentifier: 
-  nameString: Wood Harvester
-  prefab: {fileID: 5573731112508028868, guid: a6eb9c27e1283e1489ac73f005dc6fa9, type: 3}
+  nameString: Gold Harvester
+  prefab: {fileID: 5573731112508028868, guid: 36d4c223be92c6d498b532e57286a645, type: 3}
   resourceGeneratorData:
-    timerMax: 0.5
-    resourceType: {fileID: 11400000, guid: e8342018e8c15e54f92340f2bdeae834, type: 2}
-  sprite: {fileID: 21300000, guid: 793ca27a5a3378149aaa12abe85933f4, type: 3}
+    timerMax: 2
+    resourceType: {fileID: 11400000, guid: 1a71df156533f314fba13d58ba869743, type: 2}
+  sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}
