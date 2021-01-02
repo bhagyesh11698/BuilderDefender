@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5573731110776448586}
   - component: {fileID: 5573731110776448587}
+  - component: {fileID: 7094576062132954877}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 793ca27a5a3378149aaa12abe85933f4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8ead931dd91bff8489e75de9c414f17f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,6 +82,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7094576062132954877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573731110776448629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a541b4e0c330c2439004f955f0da3c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runOnce: 1
+  positionOffsetY: 0
 --- !u!1 &5573731112508028871
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +108,7 @@ GameObject:
   - component: {fileID: -4590916137619272210}
   - component: {fileID: -7310070265740164176}
   m_Layer: 0
-  m_Name: pfWoodHarverster
+  m_Name: pfGoldHarverster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -138,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff15bf2325b4a2a44a34970f3d14c182, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingType: {fileID: 11400000, guid: 7e39749ee204d2b45898fdb25948ebe4, type: 2}
+  buildingType: {fileID: 11400000, guid: 65da047ce0b868e46b8c92d316a30067, type: 2}
